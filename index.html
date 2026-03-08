@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celtic Round | Luxury Golf Tourism</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        alabaster: '#F9F9F9',
+                        slate: '#2C3539',
+                        hunter: '#1B4D3E',
+                        gold: '#C5A059',
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Lato', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'hero-pattern': "linear-gradient(to bottom, rgba(44, 53, 57, 0.4), rgba(44, 53, 57, 0.7)), url('https://images.unsplash.com/photo-1587334274328-64186a80aeb3?auto=format&fit=crop&q=80')",
+                        'parallax-bg': "linear-gradient(to right, rgba(27, 77, 62, 0.85), rgba(44, 53, 57, 0.85)), url('https://images.unsplash.com/photo-1506514300305-64903ea721c0?auto=format&fit=crop&q=80')",
+                        'contact-bg': "linear-gradient(to bottom, rgba(249, 249, 249, 0.9), rgba(249, 249, 249, 0.95)), url('https://images.unsplash.com/photo-1535136104956-2db93e828114?auto=format&fit=crop&q=80')"
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Utilities */
+        .glass-nav {
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .accordion-content {
+            transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+        .accordion-content.active {
+            max-height: 500px; /* Arbitrary large number */
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="font-sans bg-alabaster text-slate antialiased">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 bg-transparent py-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+            <a href="#" class="text-2xl font-serif font-bold text-white tracking-wider transition-colors duration-300" id="brand-logo">
+                <span class="text-gold">CELTIC</span> ROUND
+            </a>
+            <div class="hidden md:flex space-x-8 text-sm uppercase tracking-widest text-white font-light transition-colors duration-300" id="nav-links">
+                <a href="#philosophy" class="hover:text-gold transition-colors">Philosophy</a>
+                <a href="#golf" class="hover:text-gold transition-colors">The Golf</a>
+                <a href="#accommodations" class="hover:text-gold transition-colors">Residences</a>
+                <a href="#bespoke" class="hover:text-gold transition-colors">Experiences</a>
+                <a href="#itineraries" class="hover:text-gold transition-colors">Itineraries</a>
+            </div>
+            <a href="#contact" class="hidden md:inline-block px-6 py-2 border border-gold text-gold hover:bg-gold hover:text-white transition-all duration-300 uppercase tracking-widest text-xs">
+                Inquire
+            </a>
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-white" id="mobile-menu-btn">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+    </nav>
+    <!-- 1. Hero Section -->
+    <section class="relative h-screen flex items-center justify-center bg-hero-pattern bg-cover bg-center bg-no-repeat bg-fixed">
+        <div class="text-center px-4 max-w-4xl mx-auto mt-20">
+            <h2 class="text-gold uppercase tracking-[0.3em] text-sm md:text-base mb-6 animate-pulse">2026 / 2027 Season</h2>
+            <h1 class="text-5xl md:text-7xl font-serif text-white mb-6 leading-tight drop-shadow-lg">Beyond the Fairway</h1>
+            <p class="text-lg md:text-xl text-gray-200 font-light mb-12 max-w-2xl mx-auto">
+                Bespoke, native-led golf journeys through the legendary landscapes of Scotland & Ireland. Quiet luxury. Unrivaled access.
+            </p>
+            <a href="#philosophy" class="inline-block px-10 py-4 bg-gold text-white uppercase tracking-widest text-sm hover:bg-white hover:text-slate transition-all duration-300 shadow-xl">
+                Begin Your Journey
+            </a>
+        </div>
+        <!-- Scroll Down Indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <a href="#philosophy" class="text-white opacity-70 hover:opacity-100 hover:text-gold transition-colors">
+                <i class="fas fa-chevron-down text-2xl"></i>
+            </a>
+        </div>
+    </section>
+    <!-- 2. The Philosophy -->
+    <section id="philosophy" class="py-24 bg-alabaster">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="lg:w-1/2">
+                    <h3 class="text-gold uppercase tracking-[0.2em] text-sm font-semibold mb-4">Our Approach</h3>
+                    <h2 class="text-4xl md:text-5xl font-serif text-slate mb-8 leading-snug">Insider Access.<br>Unrivaled Elegance.</h2>
+                    <div class="w-12 h-1 bg-hunter mb-8"></div>
+                    <p class="text-gray-600 leading-relaxed mb-6 font-light">
+                        The era of the volume-based bucket-list tour is over. Today's discerning traveler seeks profound cultural immersion and stress-free, personalized logistics. We do not merely book tee times; we curate narratives.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed mb-8 font-light">
+                        With "boots on the ground" in both Scotland and Ireland, our native experts navigate the complexities of regional hubs, exclusive heritage sites, and private caddie programs to deliver a journey characterized by quiet luxury.
+                    </p>
+                    <a href="#contact" class="text-hunter font-semibold uppercase tracking-wider text-sm hover:text-gold transition-colors group flex items-center">
+                        Speak with a Consultant
+                        <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-2 transition-transform"></i>
+                    </a>
+                </div>
+                <div class="lg:w-1/2 relative">
+                    <div class="absolute inset-0 bg-gold transform translate-x-4 translate-y-4 rounded shadow-lg"></div>
+                    <img src="https://images.unsplash.com/photo-1593111774240-d529f12cb416?auto=format&fit=crop&q=80" alt="Golfer and Caddie" class="relative z-10 rounded shadow-xl object-cover h-[500px] w-full">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 3. The Golf (Marquee Destinations) -->
+    <section id="golf" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
+            <h3 class="text-gold uppercase tracking-[0.2em] text-sm font-semibold mb-4">The Courses</h3>
+            <h2 class="text-4xl md:text-5xl font-serif text-slate">Play the Legends</h2>
+            <div class="w-12 h-1 bg-hunter mx-auto mt-6"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="group relative overflow-hidden rounded-lg shadow-lg cursor-pointer h-96">
+                    <img src="https://images.unsplash.com/photo-1587334274328-64186a80aeb3?auto=format&fit=crop&q=80" alt="St Andrews" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300"></div>
+                    <div class="absolute bottom-0 left-0 p-8 w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                        <p class="text-gold text-xs uppercase tracking-widest mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">Fife, Scotland</p>
+                        <h4 class="text-2xl font-serif text-white mb-2">The Old Course</h4>
+                        <p class="text-gray-300 text-sm font-light opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200">The undisputed Home of Golf. Guaranteed tee times available through our premium access network.</p>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="group relative overflow-hidden rounded-lg shadow-lg cursor-pointer h-96">
+                    <img src="https://images.unsplash.com/photo-1620023647161-0428e50b4ec8?auto=format&fit=crop&q=80" alt="Royal County Down" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300"></div>
+                    <div class="absolute bottom-0 left-0 p-8 w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                        <p class="text-gold text-xs uppercase tracking-widest mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">Newcastle, Northern Ireland</p>
+                        <h4 class="text-2xl font-serif text-white mb-2">Royal County Down</h4>
+                        <p class="text-gray-300 text-sm font-light opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200">Consistently ranked the #1 course globally. A majestic links nestled beneath the Mountains of Mourne.</p>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="group relative overflow-hidden rounded-lg shadow-lg cursor-pointer h-96">
+                    <img src="https://images.unsplash.com/photo-1596701831862-5cb09da23661?auto=format&fit=crop&q=80" alt="Trump International" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300"></div>
+                    <div class="absolute bottom-0 left-0 p-8 w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                        <p class="text-gold text-xs uppercase tracking-widest mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">Aberdeen, Scotland</p>
+                        <h4 class="text-2xl font-serif text-white mb-2">Trump International</h4>
+                        <p class="text-gray-300 text-sm font-light opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200">A modern masterpiece carved through towering sand dunes, defining the rugged beauty of Aberdeenshire.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="#contact" class="inline-block border-b border-hunter text-hunter hover:text-gold hover:border-gold transition-colors pb-1 uppercase tracking-widest text-sm">View Full Course Roster</a>
+            </div>
+        </div>
+    </section>
+    <!-- 4. The Accommodations (Castles & Estates) -->
+    <section id="accommodations" class="py-24 bg-slate text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h3 class="text-gold uppercase tracking-[0.2em] text-sm font-semibold mb-4">Luxurious Rest</h3>
+                <h2 class="text-4xl md:text-5xl font-serif">Reside in History</h2>
+                <div class="w-12 h-1 bg-gold mx-auto mt-6"></div>
+                <p class="mt-6 text-gray-400 font-light max-w-2xl mx-auto">From exclusive-use 13th-century castles to modern 5-star coastal estates, your accommodation is as memorable as the golf itself.</p>
+            </div>
+            <!-- Tabbed Interface Look-a-like using grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+                <!-- Estate Card -->
+                <div class="bg-[#364247] rounded-lg overflow-hidden border border-[#445359] hover:border-gold transition-colors duration-300">
+                    <img src="https://images.unsplash.com/photo-1604440131100-cba1451f28e6?auto=format&fit=crop&q=80" alt="Private Castles" class="w-full h-56 object-cover">
+                    <div class="p-8">
+                        <div class="flex items-center justify-between mb-4">
+                            <h4 class="text-xl font-serif text-gold">Private Castles</h4>
+                            <i class="fas fa-chess-rook text-gray-400"></i>
+                        </div>
+                        <p class="text-gray-300 font-light text-sm mb-6">Exclusive-use rentals like Glin Castle (Ireland) or Rowallan Castle (Scotland). Complete with private chefs, drawing rooms, and acres of private estate.</p>
+                        <ul class="text-sm text-gray-400 space-y-2 font-light">
+                            <li><i class="fas fa-check text-gold mr-2 text-xs"></i> Fully staffed heritage properties</li>
+                            <li><i class="fas fa-check text-gold mr-2 text-xs"></i> Bespoke dining experiences</li>
+                            <li><i class="fas fa-check text-gold mr-2 text-xs"></i> Ultimate privacy & security</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 5-Star Hotel Card -->
+                <div class="bg-[#364247] rounded-lg overflow-hidden border border-[#445359] hover:border-gold transition-colors duration-300">
+                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80" alt="Luxury Estates" class="w-full h-56 object-cover">
+                    <div class="p-8">
+                        <div class="flex items-center justify-between mb-4">
+                            <h4 class="text-xl font-serif text-gold">5-Star Estates</h4>
+                            <i class="fas fa-concierge-bell text-gray-400"></i>
+                        </div>
+                        <p class="text-gray-300 font-light text-sm mb-6">Iconic golf resorts providing seamless access to the first tee. Enjoy world-class spas, Michelin-starred dining, and impeccable concierge service.</p>
+                        <ul class="text-sm text-gray-400 space-y-2 font-light">
+                            <li><i class="fas fa-check text-gold mr-2 text-xs"></i> On-property championship golf</li>
+                            <li><i class="fas fa-check text-gold mr-2 text-xs"></i> Award-winning spa facilities</li>
+                            <li><i class="fas fa-check text-gold mr-2 text-xs"></i> Sumptuous coastal views</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- City Hotels Card -->
+                <div class="bg-[#364247] rounded-lg overflow-hidden border border-[#445359] hover:border-gold transition-colors duration-300">
+                    <img src="https://images.unsplash.com/photo-1551882547-ff40c0d5b5df?auto=format&fit=crop&q=80" alt="City Center Elegance" class="w-full h-56 object-cover">
+                    <div class="p-8">
+                        <div class="flex items-center justify-between mb-4">
+                            <h4 class="text-xl font-serif text-gold">City Hubs</h4>
+                            <i class="fas fa-city text-gray-400"></i>
+                        </div>
+                        <p class="text-gray-300 font-light text-sm mb-6">Immerse yourself in the vibrant culture of Dublin or Edinburgh. Boutique luxury perfectly positioned for post-round gastronomy and nightlife.</p>
+                        <ul class="text-sm text-gray-400 space-y-2 font-light">
+                            <li><i class="fas fa-check text-gold mr-2 text-xs"></i> Proximity to historic landmarks</li>
+                            <li><i class="fas fa-check text-gold mr-2 text-xs"></i> Michelin-recommended dining steps away</li>
+                            <li><i class="fas fa-check text-gold mr-2 text-xs"></i> Chauffeur waiting at the door</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 5. Bespoke Experiences (Parallax Background) -->
+    <section id="bespoke" class="py-24 bg-parallax-bg bg-cover bg-center bg-fixed relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <h3 class="text-gold uppercase tracking-[0.2em] text-sm font-semibold mb-4">Beyond the Greens</h3>
+            <h2 class="text-4xl md:text-5xl font-serif text-white mb-16">Curated Excellence</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-white">
+                <!-- Gastronomy -->
+                <div class="flex flex-col items-center p-6 bg-slate/40 backdrop-blur-sm rounded border border-white/10 hover:border-gold/50 transition-colors">
+                    <div class="w-20 h-20 rounded-full border border-gold flex items-center justify-center mb-6">
+                        <i class="fas fa-utensils text-3xl text-gold"></i>
+                    </div>
+                    <h4 class="text-xl font-serif mb-4">Michelin Gastronomy</h4>
+                    <p class="font-light text-gray-200 text-sm">
+                        Reservations secured at elite culinary destinations, from The Peat Inn in St Andrews to Chapter One in Dublin. Taste the heritage of the land.
+                    </p>
+                </div>
+                <!-- Transport -->
+                <div class="flex flex-col items-center p-6 bg-slate/40 backdrop-blur-sm rounded border border-white/10 hover:border-gold/50 transition-colors">
+                    <div class="w-20 h-20 rounded-full border border-gold flex items-center justify-center mb-6">
+                        <i class="fas fa-helicopter text-3xl text-gold"></i>
+                    </div>
+                    <h4 class="text-xl font-serif mb-4">Aviation & Chauffeurs</h4>
+                    <p class="font-light text-gray-200 text-sm">
+                        Maximize your time with private helicopter transfers between remote links, or relax in our fleet of Wi-Fi-enabled luxury ground transport.
+                    </p>
+                </div>
+                <!-- Culture -->
+                <div class="flex flex-col items-center p-6 bg-slate/40 backdrop-blur-sm rounded border border-white/10 hover:border-gold/50 transition-colors">
+                    <div class="w-20 h-20 rounded-full border border-gold flex items-center justify-center mb-6">
+                        <i class="fas fa-glass-whiskey text-3xl text-gold"></i>
+                    </div>
+                    <h4 class="text-xl font-serif mb-4">Whiskey & Heritage</h4>
+                    <p class="font-light text-gray-200 text-sm">
+                        Private VIP tours of historic distilleries like Royal Lochnagar, custom club-fitting sessions, and exclusive access to 5,000-year-old heritage sites.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 6. Sample Itineraries -->
+    <section id="itineraries" class="py-24 bg-alabaster">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h3 class="text-hunter uppercase tracking-[0.2em] text-sm font-semibold mb-4">Examples of Excellence</h3>
+                <h2 class="text-4xl md:text-5xl font-serif text-slate">Journeys Crafted to Perfection</h2>
+                <div class="w-12 h-1 bg-gold mx-auto mt-6"></div>
+                <p class="mt-6 text-gray-600 font-light">Every itinerary is built from scratch. Below are glimpses of what a $15,000+ custom trip entails.</p>
+            </div>
+            <!-- Accordion -->
+            <div class="space-y-6">
+                <!-- Itinerary 1 -->
+                <div class="bg-white border border-gray-200 rounded shadow-sm">
+                    <button class="w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none" onclick="toggleAccordion('acc-1', 'icon-1')">
+                        <span class="font-serif text-xl text-slate"><span class="text-gold mr-3">01.</span> The Spirit of the Links (Scotland)</span>
+                        <i id="icon-1" class="fas fa-plus text-gold transition-transform duration-300"></i>
+                    </button>
+                    <div id="acc-1" class="accordion-content px-6 bg-gray-50 border-t border-gray-100">
+                        <div class="py-6 flex flex-col md:flex-row gap-8">
+                            <div class="md:w-1/3">
+                                <img src="https://images.unsplash.com/photo-1590487988256-9ed24133863e?auto=format&fit=crop&q=80" alt="Scotland" class="rounded object-cover h-48 w-full">
+                            </div>
+                            <div class="md:w-2/3">
+                                <h5 class="font-semibold text-hunter mb-2">7 Days | St Andrews & Aberdeenshire</h5>
+                                <p class="text-sm text-gray-600 font-light mb-4">A seamless blend of the ancient and the modern. Experience the home of golf before taking a private flight north to tackle towering dunes.</p>
+                                <ul class="text-sm text-gray-600 font-light space-y-2">
+                                    <li><strong class="text-slate">Play:</strong> The Old Course, Kingsbarns, Carnoustie, Trump International, Cruden Bay.</li>
+                                    <li><strong class="text-slate">Stay:</strong> The Old Course Hotel & MacLeod House.</li>
+                                    <li><strong class="text-slate">Experience:</strong> Private fitting at Auchterlonies, Michelin dining at The Peat Inn.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Itinerary 2 -->
+                <div class="bg-white border border-gray-200 rounded shadow-sm">
+                    <button class="w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none" onclick="toggleAccordion('acc-2', 'icon-2')">
+                        <span class="font-serif text-xl text-slate"><span class="text-gold mr-3">02.</span> The Wild Atlantic Way (Ireland)</span>
+                        <i id="icon-2" class="fas fa-plus text-gold transition-transform duration-300"></i>
+                    </button>
+                    <div id="acc-2" class="accordion-content px-6 bg-gray-50 border-t border-gray-100">
+                        <div class="py-6 flex flex-col md:flex-row gap-8">
+                            <div class="md:w-1/3">
+                                <img src="https://images.unsplash.com/photo-1564959130747-897fb406b9af?auto=format&fit=crop&q=80" alt="Ireland" class="rounded object-cover h-48 w-full">
+                            </div>
+                            <div class="md:w-2/3">
+                                <h5 class="font-semibold text-hunter mb-2">8 Days | The Rugged South West</h5>
+                                <p class="text-sm text-gray-600 font-light mb-4">Trace the dramatic coastline of Ireland, playing dramatic clifftop courses while enjoying the unparalleled hospitality of the locals.</p>
+                                <ul class="text-sm text-gray-600 font-light space-y-2">
+                                    <li><strong class="text-slate">Play:</strong> Ballybunion, Lahinch, Old Head, Waterville, Tralee.</li>
+                                    <li><strong class="text-slate">Stay:</strong> Glin Castle (Exclusive Use) & Adare Manor.</li>
+                                    <li><strong class="text-slate">Experience:</strong> Cliffs of Moher private boat tour, VIP Jameson distillery tasting.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 7. The Concierge (Contact & Booking) -->
+    <section id="contact" class="py-24 bg-contact-bg bg-cover bg-center relative">
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-white/90 backdrop-blur-sm"></div>
+
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="bg-white p-10 md:p-16 shadow-2xl rounded-sm border-t-4 border-gold">
+                <div class="text-center mb-10">
+                    <h2 class="text-4xl font-serif text-slate mb-4">Commission Your Itinerary</h2>
+                    <p class="text-gray-500 font-light">Allow our specialists to craft your 2026/2027 legacy tour. All inquiries are handled with strict confidentiality.</p>
+                </div>
+                <form class="space-y-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <input type="text" placeholder="First & Last Name" class="w-full pb-3 bg-transparent border-b border-gray-300 focus:border-gold outline-none transition-colors text-slate font-light placeholder-gray-400">
+                        </div>
+                        <div>
+                            <input type="email" placeholder="Preferred Email" class="w-full pb-3 bg-transparent border-b border-gray-300 focus:border-gold outline-none transition-colors text-slate font-light placeholder-gray-400">
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <select class="w-full pb-3 bg-transparent border-b border-gray-300 focus:border-gold outline-none transition-colors text-gray-400 font-light appearance-none">
+                                <option value="" disabled selected>Target Travel Window</option>
+                                <option value="spring26">Spring 2026</option>
+                                <option value="summer26">Summer 2026</option>
+                                <option value="fall26">Autumn 2026</option>
+                                <option value="spring27">Spring 2027</option>
+                                <option value="summer27">Summer 2027</option>
+                            </select>
+                        </div>
+                        <div>
+                            <select class="w-full pb-3 bg-transparent border-b border-gray-300 focus:border-gold outline-none transition-colors text-gray-400 font-light appearance-none">
+                                <option value="" disabled selected>Party Size</option>
+                                <option value="2">2 Golfers (Couples Tour)</option>
+                                <option value="4">4 Golfers</option>
+                                <option value="8">8 Golfers</option>
+                                <option value="group">Large Group (12+)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <textarea rows="4" placeholder="Share your desires (Preferred courses, accommodations, or special interests like Michelin dining or helicopter transfers)..." class="w-full pb-3 bg-transparent border-b border-gray-300 focus:border-gold outline-none transition-colors text-slate font-light placeholder-gray-400 resize-none"></textarea>
+                    </div>
+                    <div class="text-center pt-4">
+                        <button type="button" class="px-12 py-4 bg-slate text-white uppercase tracking-widest text-sm hover:bg-hunter transition-all duration-300">
+                            Request Consultation
+                        </button>
+                    </div>
+                </form>
+
+                <!-- Trust Signals -->
+                <div class="mt-12 flex flex-col md:flex-row justify-center items-center gap-6 text-gray-400 text-xs uppercase tracking-widest">
+                    <span class="flex items-center"><i class="fas fa-shield-alt mr-2 text-gold"></i> Secure Planning</span>
+                    <span class="hidden md:inline">|</span>
+                    <span class="flex items-center"><i class="fas fa-gem mr-2 text-gold"></i> Premium Access</span>
+                    <span class="hidden md:inline">|</span>
+                    <span class="flex items-center"><i class="fas fa-user-tie mr-2 text-gold"></i> Native Specialists</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-slate py-12 border-t border-gray-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-6 md:mb-0">
+                <span class="text-2xl font-serif font-bold text-white tracking-wider">
+                    <span class="text-gold">CELTIC</span> ROUND
+                </span>
+                <p class="text-gray-400 text-sm mt-2 font-light">Bespoke Golf Journeys. Est. 2026.</p>
+            </div>
+            <div class="flex space-x-6 text-gray-400">
+                <a href="#" class="hover:text-gold transition-colors"><i class="fab fa-instagram text-xl"></i></a>
+                <a href="#" class="hover:text-gold transition-colors"><i class="fab fa-twitter text-xl"></i></a>
+                <a href="#" class="hover:text-gold transition-colors"><i class="fab fa-linkedin-in text-xl"></i></a>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 text-center md:text-left text-gray-500 text-xs font-light">
+            &copy; 2026 Celtic Round Golf Tourism. All rights reserved. | <a href="#" class="hover:text-gold">Privacy Policy</a>
+        </div>
+    </footer>
+    <!-- Interactive Scripts -->
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            const brandLogo = document.getElementById('brand-logo');
+            const navLinks = document.getElementById('nav-links');
+
+            if (window.scrollY > 50) {
+                navbar.classList.remove('bg-transparent', 'py-6');
+                navbar.classList.add('bg-white', 'shadow-md', 'py-4');
+                brandLogo.classList.remove('text-white');
+                brandLogo.classList.add('text-slate');
+                navLinks.classList.remove('text-white');
+                navLinks.classList.add('text-slate');
+            } else {
+                navbar.classList.add('bg-transparent', 'py-6');
+                navbar.classList.remove('bg-white', 'shadow-md', 'py-4');
+                brandLogo.classList.add('text-white');
+                brandLogo.classList.remove('text-slate');
+                navLinks.classList.add('text-white');
+                navLinks.classList.remove('text-slate');
+            }
+        });
+        // Accordion Toggle
+        function toggleAccordion(contentId, iconId) {
+            const content = document.getElementById(contentId);
+            const icon = document.getElementById(iconId);
+
+            // Toggle active class
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                icon.classList.remove('rotate-45');
+                icon.classList.add('fa-plus');
+                icon.classList.remove('fa-times');
+            } else {
+                // Close all other accordions first (optional, but good for UX)
+                const allContents = document.querySelectorAll('.accordion-content');
+                const allIcons = document.querySelectorAll('.fa-times');
+                allContents.forEach(c => c.classList.remove('active'));
+                allIcons.forEach(i => {
+                    i.classList.remove('fa-times', 'rotate-45');
+                    i.classList.add('fa-plus');
+                });
+                content.classList.add('active');
+                icon.classList.remove('fa-plus');
+                icon.classList.add('fa-times', 'rotate-45');
+            }
+        }
+    </script>
+</body>
+</html>
